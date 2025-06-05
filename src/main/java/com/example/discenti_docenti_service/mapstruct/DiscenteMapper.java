@@ -13,6 +13,6 @@ public interface DiscenteMapper {
 
     List<DiscenteDTO> toDtoList(List<Discente> discenti); //aggiunto ora
 
-//    DiscenteDTOLight toDtoLight(Discente discente);
-//    Discente toEntityLight(DiscenteDTOLight dto);
+   //DiscenteDTOLight toDtoLight(Discente discente);
+   //Discente toEntityLight(DiscenteDTOLight dto);
 }

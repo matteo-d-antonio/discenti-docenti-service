@@ -6,6 +6,11 @@ import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+//import lombok.Getter;
+//import lombok.Setter;
+
+//@Getter
+//@Setter
 
 @NoArgsConstructor          //genera costruttore senza argomenti
 @AllArgsConstructor         //genera costruttore  con tutti i campi degli argomenti
@@ -14,6 +19,6 @@ public class DocenteDTO {
 
     private String nome;
     private String cognome;
-    private String dataNascita;
+    private Date dataNascita;
 
 }

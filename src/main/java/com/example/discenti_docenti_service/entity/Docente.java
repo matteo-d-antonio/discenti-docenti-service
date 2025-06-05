@@ -34,15 +34,17 @@ public class Docente {
     @DateTimeFormat(pattern = "yyyy-MM-dd")                                 // serve a Spring per interpretare la stringa
     private Date dataNascita;
 
+    //public Docente(){}
 
-    public Docente(Long id, String nome, String cognome) {
-        this.id=id;
-        this.nome=nome;
-        this.cognome=cognome;
-    }
 
-    public Docente(String nome, String cognome) {
-        this.nome = nome;
-        this.cognome = cognome;
-    }
+    //public Docente(Long id, String nome, String cognome) {
+        //this.id=id;
+        //this.nome=nome;
+        //this.cognome=cognome;
+    //}
+
+    //public Docente(String nome, String cognome) {
+        //this.nome = nome;
+        //this.cognome = cognome;
+    //}
 }

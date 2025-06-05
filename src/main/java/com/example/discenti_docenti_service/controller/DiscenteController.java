@@ -1,5 +1,6 @@
 package com.example.discenti_docenti_service.controller;
 
+import com.example.discenti_docenti_service.dto.DiscenteDTO;
 import com.example.discenti_docenti_service.service.DiscenteService; // Import per il servizio
 import com.example.discenti_docenti_service.entity.Discente; // Import per l'entità
 import org.springframework.beans.factory.annotation.Autowired; // Import per @Autowired

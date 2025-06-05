@@ -12,6 +12,6 @@ public interface DocenteMapper {
     DocenteDTO toDto(Docente docente);
     Docente toEntity(DocenteDTO dto);
 
-//    DocenteDTOLight toDtoLight(Docente docente);
-//    Docente toEntityLight(DocenteDTOLight dto);
+  // DocenteDTOLight toDtoLight(Docente docente);
+//   Docente toEntityLight(DocenteDTOLight dto);
 }

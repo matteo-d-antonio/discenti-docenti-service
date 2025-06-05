@@ -9,5 +9,4 @@ public class DocenteDTOLight {
     private String nome;
     private String cognome;
 
-
 }

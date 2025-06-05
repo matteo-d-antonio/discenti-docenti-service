@@ -36,6 +36,9 @@ public class Discente {
     @Column(nullable = true, name= "città_residenza")
     private String cittaResidenza;
 
+    //public Discente(){}
+
+
 
     public Discente(Long id, String nome, String cognome, Integer matricola, String cittaResidenza) {
         this.id = id;
