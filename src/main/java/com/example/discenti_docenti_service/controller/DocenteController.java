@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.stereotype.Controller;
 //import org.springframework.ui.Model;
 //import org.springframework.validation.BindingResult;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -25,6 +27,17 @@ public class DocenteController {
         List<DocenteDTO> docenti = docenteService.findAll();
         Long numeroDocenti = docenteService.contaDocenti();
         return docenti;
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<DocenteDTO> getDocenteById(@PathVariable Long id) {
+        // Verifica se il docente esiste nel database
+        DocenteDTO docente = docenteService.findById(id);
+        if (docente != null) {
+            return new ResponseEntity<>(docente, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
 

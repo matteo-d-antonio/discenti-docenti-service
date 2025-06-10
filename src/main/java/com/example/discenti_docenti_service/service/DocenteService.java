@@ -6,10 +6,10 @@ import com.example.discenti_docenti_service.dto.DocenteDTO;
 import com.example.discenti_docenti_service.entity.Docente;
 import com.example.discenti_docenti_service.repository.DocenteRepository;
 import jakarta.persistence.EntityNotFoundException;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -24,6 +24,19 @@ public class DocenteService {
     @Autowired
     DocenteMapper  docenteMapper;
 
+
+    public DocenteDTO findById(Long id) {
+        Optional<Docente> docenteOpt = docenteRepository.findById(id);
+
+        if (docenteOpt.isPresent()) {
+            // Restituisci il DocenteDTO se il docente esiste
+            Docente docente = docenteOpt.get();
+            return new DocenteDTO(docente.getId(), docente.getNome(), docente.getCognome());
+        } else {
+            // Se il docente non esiste, restituisci null o lancia un'eccezione
+            return null;  // O puoi lanciare un'eccezione se preferisci
+        }
+    }
 
     public List<DocenteDTO> findAll() {
         return docenteRepository.findAll().stream()
@@ -52,22 +65,6 @@ public class DocenteService {
         return docenteMapper.toDto(savedDocente);
     }
 
-    //@Transactional
-    //public void delete(Long id) {
-        // Prima recuperi il docente
-        //Docente docente = docenteRepository.findById(id)
-                //.orElseThrow(() -> new EntityNotFoundException("Docente non trovato"));
-
-        // Setti a null tutti i corsi che lo referenziano
-        //List<Corso> corsi = corsoRepository.findByDocente(docente);
-        //for (Corso corso : corsi) {
-            //corso.setDocente(null);
-        //}
-        //corsoRepository.saveAll(corsi);
-
-        // Poi elimini il docente
-        //docenteRepository.delete(docente);
-    //}
 
 
     public Long contaDocenti() {
